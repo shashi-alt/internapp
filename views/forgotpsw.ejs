@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .container {
+        margin: 90px;
+    }
+
+    body {
+        background-color: darkcyan;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center" style="color: aqua;">
+                Create New Password
+            </h2>
+            <div id="signupbox" style="margin-top:50px"
+                class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <div class="panel-title">Forgot Your Password then Create New Password Here!</div>
+                    </div>
+
+                    <div class="pannel-body">
+                        <% if(msg !='' ){ %>
+                            <p style="text-align: center; color: blue;">
+                                <%= msg %>
+                            </p>
+                            <% } %>
+
+                                <form action="/forgotpsw" id="EmployeeForm" class="form-horizontal" method="post"
+                                    role="form" enctype="multipart/form-data">
+                                    <div id="signupalert" style="display:none" class="alert-danger">
+                                    </div>
+                                   
+                                  
+                                    <div class="form-group">
+                                        <label for="password" class="col-md-3 control-label">New_Password</label>
+                                        <div class="col-md-8">
+                                            <input type="password" class="form-control" name="password"
+                                                placeholder="Enter your New password" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirm password"
+                                            class="col-md-3 control-label">Confirm New_Password</label>
+                                        <div class="col-md-8">
+                                            <input type="password" class="form-control" name="confirmpassword"
+                                                placeholder="Enter Your Confirm New Password" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- Button -->
+                                        <div class="col-md-offset-3 col-md-9">
+                                            <input type="submit" name="submit" value="Create" class="btn btn-primary">
+                                        </div>
+                                    </div>
+                                    <p>If You are Created <a href="/"> Please Login Here</a></p>
+
+                                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
